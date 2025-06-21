@@ -20,7 +20,7 @@ function App() {
 		queryFn: async () => {
 			try {
 				const res = await fetch("/api/auth/me", {
-					credentials: "include", // important to include cookies in the request
+					credentials: "include",
 				});
 				const data = await res.json();
 				if (data.error) return null;
@@ -45,7 +45,7 @@ function App() {
 	}
 
 	return (
-		<div className='flex max-w-6xl mx-auto'>
+		<div  data-theme="dark" className='flex max-w-6xl mx-auto'>
 			{/* Common component, bc it's not wrapped with Routes */}
 			{authUser && <Sidebar />}
 			<Routes>
