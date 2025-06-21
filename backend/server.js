@@ -10,7 +10,7 @@ import postRoutes from "./routes/post.route.js";
 import notificationRoutes from "./routes/notification.route.js";
 
 import connectMongoDB from "./db/connectMongoDB.js";
-
+import cors from "cors";
 dotenv.config();
 
 cloudinary.config({
@@ -25,7 +25,7 @@ const __dirname = path.resolve();
 
 app.set('trust proxy', true);
 app.use(cors({
-  origin: conf.CORS_ORIGIN,
+  origin: process.env.CORS_ORIGIN,
   credentials: true
 }));
 
